@@ -1,12 +1,14 @@
-FROM node:14.16.0
+FROM node:14.16.0 as generator
 WORKDIR /app/src
 COPY ./package.json ./yarn.lock /app/src/
 RUN npm install
 COPY . /app/src
 
+FROM generator as unit-tests
 WORKDIR /app/src
 RUN ["npm", "run", "test:unit"]
 
+FROM generator as builder
 WORKDIR /app/src
 RUN npm run build
 
