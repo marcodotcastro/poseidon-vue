@@ -1,1 +1,1 @@
-web: sudo yarn build
+web: yarn build
