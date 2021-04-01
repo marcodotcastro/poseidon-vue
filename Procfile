@@ -1,1 +1,1 @@
-web: npm serve -p 8080
+web: npm build
