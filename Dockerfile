@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine3.10 as generator
+FROM node:14.16.0 as generator
 WORKDIR /app/src
 COPY ./package.json ./yarn.lock /app/src/
 RUN npm install
