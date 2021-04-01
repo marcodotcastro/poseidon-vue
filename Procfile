@@ -1,1 +1,1 @@
-web: npm serve
+web: npm serve -p 8080
